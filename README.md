@@ -1,42 +1,35 @@
-# Pneumonia Classification
+# Pneumonia Classification using Deep Learning
 
-This project detects pneumonia from chest X-ray images using both classical machine learning and deep learning approaches.
+This project detects pneumonia from chest X-ray images using deep learning and transfer learning techniques.
 
-The project compares traditional feature-based models with transfer learning CNNs and evaluates their performance using standard classification metrics.
+The project uses pretrained CNN architectures and evaluates their performance using standard classification metrics.
 
 ## Features
 
-* Chest X-ray image preprocessing and exploratory analysis
-* Chest-region cropping and CLAHE-based image enhancement
-* Texture and intensity feature extraction
-* PCA-based dimensionality reduction
-* Patient-level train-test splitting
-* Classical ML model training and hyperparameter tuning
-* Transfer learning using pretrained CNN architectures
+* Chest X-ray image preprocessing and validation
+* Exploratory data analysis and class distribution analysis
+* Image enhancement using CLAHE
+* Image augmentation using Albumentations
+* Transfer learning with pretrained CNN architectures
+* Class-weighted model training
+* Early stopping and learning-rate scheduling
 * Model evaluation using Accuracy, Precision, Recall, F1-Score and ROC-AUC
-* Comparison of classical ML and deep learning approaches
+* Confusion matrix and ROC curve analysis
 
 ## Methodology
 
-1. Loaded and explored chest X-ray images from the dataset.
-2. Preprocessed images using grayscale conversion and resizing for classical ML.
-3. Extracted intensity, statistical and GLCM texture features from X-ray images.
-4. Applied feature scaling and PCA within ML pipelines to reduce dimensionality and prevent data leakage.
-5. Trained and tuned Logistic Regression, Random Forest and SVM models using patient-aware cross-validation.
-6. Applied chest-region cropping, CLAHE enhancement and image augmentation for deep learning.
-7. Trained pretrained VGG16 and ResNet50-based models using transfer learning.
-8. Evaluated the models using Accuracy, Precision, Recall, F1-Score and ROC-AUC.
-9. Compared classical ML and deep learning models to understand their strengths and trade-offs.
+1. Loaded and validated chest X-ray images from the dataset.
+2. Explored the dataset and analyzed the distribution of Normal and Pneumonia images.
+3. Preprocessed and enhanced X-ray images using resizing and CLAHE.
+4. Applied image augmentation to improve model generalization.
+5. Handled class imbalance using class weights during training.
+6. Built transfer-learning models using pretrained VGG16 and ResNet50 architectures.
+7. Added custom classification layers with Global Average Pooling and Dropout.
+8. Trained the models using Adam optimizer with early stopping and learning-rate reduction.
+9. Evaluated model performance using Accuracy, Precision, Recall, F1-Score and ROC-AUC.
+10. Compared the CNN models using confusion matrices and ROC curves.
 
 ## Models Used
-
-### Classical Machine Learning
-
-* Logistic Regression
-* Random Forest
-* SVM
-
-### Deep Learning
 
 * VGG16
 * ResNet50
@@ -55,9 +48,8 @@ The project compares traditional feature-based models with transfer learning CNN
 * NumPy
 * Pandas
 * OpenCV
-* Scikit-learn
-* Scikit-image
-* TensorFlow / Keras
-* Albumentations
 * Matplotlib
 * Seaborn
+* Albumentations
+* TensorFlow / Keras
+* Scikit-learn
